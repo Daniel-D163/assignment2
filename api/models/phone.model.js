@@ -12,8 +12,11 @@ module.exports = (sequelize, Sequelize) => {
       type: Sequelize.STRING,
     },
     contactId: {
-      type: Sequelize.NUMBER,
-      foreginKey: true,
+      type: Sequelize.INTEGER,
+      references: {
+        model: "contact",
+        key: "id",
+      },
     },
   });
 
