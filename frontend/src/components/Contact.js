@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { contact } from "../../../api/models";
 
 function Contact(props) {
   function onChange() {
@@ -48,9 +47,13 @@ function Contact(props) {
 
   return (
     <li>
-      <button type="button" onClick={onClick}>
-        DELETE
-      </button>{" "}
+      <div className="text-field-list">
+        <button type="button" onClick={onClick} onChange={onChange}>
+          DELETE
+        </button>{" "}
+      </div>
     </li>
   );
 }
+
+export default Contact;
