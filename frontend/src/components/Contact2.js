@@ -46,19 +46,12 @@ function Contact(props) {
   }
 
   return (
-    <li
-      style={{
-        border: "1px solid #ccc",
-        borderRadius: "10px",
-        padding: "10px",
-        margin: "5px",
-      }}
-    >
+    <li>
       <div className="text-field-list">
-        <h3> {props.name} </h3>
         <button type="button" onClick={onClickDel}>
           DELETE
         </button>
+        <h3> {props.name} </h3>
       </div>
     </li>
   );
@@ -98,20 +91,14 @@ function ContactList(props) {
         <input
           type="text"
           placeholder="Please enter a name"
-          value={newContact}
           onChange={onChange}
         />
         <button className="contact-button" type="button" onClick={onClick}>
           Create Contact
         </button>
         <hr className="solidLine" />
-        {props.contacts.map((contact) => (
-          <Contact
-            key={contact.id}
-            id={contact.id}
-            name={contact.name}
-            setContact={props.setContact}
-          />
+        {props.contact.map((contact) => (
+          <Contact key={contact.id} name={contact.name} />
         ))}
       </div>
     </div>
